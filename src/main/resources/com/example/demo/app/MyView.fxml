@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <top>
@@ -12,6 +13,11 @@
                   <Button fx:id="btnCerca" layoutX="272.0" layoutY="73.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="56.0" text="Obre" />
                   <Button fx:id="btnCrea" layoutX="52.0" layoutY="73.0" mnemonicParsing="false" text="Crea" />
                   <Button fx:id="btnSave" layoutX="512.0" layoutY="73.0" mnemonicParsing="false" text="Desa" />
+                  <Label layoutX="157.0" layoutY="36.0" text="PRACTICA CREACIÓ I EDICIÓ DE ARXIUS">
+                     <font>
+                        <Font name="Carlito" size="18.0" />
+                     </font>
+                  </Label>
                </children></Pane>
          </children>
       </VBox>
@@ -19,7 +25,7 @@
    <bottom>
       <Pane prefHeight="60.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="label" layoutX="53.0" layoutY="22.0" />
+            <Label fx:id="lblInfo" layoutX="53.0" layoutY="22.0" />
          </children>
       </Pane>
    </bottom>

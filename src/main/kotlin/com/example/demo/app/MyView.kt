@@ -3,6 +3,7 @@ package com.example.demo.app
 import com.example.demo.app.controller.MyController
 import javafx.beans.property.SimpleIntegerProperty
 import javafx.scene.control.Button
+import javafx.scene.control.Label
 import javafx.scene.control.TextArea
 import javafx.scene.layout.BorderPane
 import javafx.stage.FileChooser
@@ -21,6 +22,7 @@ class MyView : View(){
     private val btnCerca: Button by fxid()
     private val btnCrea: Button by fxid()
     private val textAreaEdit: TextArea by fxid()
+    private val lblInfo: Label by fxid()
     private var path: String = ""
 
 
@@ -48,6 +50,7 @@ class MyView : View(){
             file.printWriter().use { out ->
                 out.println(textoFichero)
             }
+            lblInfo.text = "Arxiu creat correctament."
         }catch (ex:IllegalStateException){
             println("ERROR: Fitxer no desat")
         }
@@ -58,6 +61,7 @@ class MyView : View(){
             val fileOut = FileWriter(path)
             fileOut.write(textAreaEdit.text)
             fileOut.close()
+            lblInfo.text = "Arxiu desat correctament."
         }catch(ex: Exception){
             print(ex.message)
         }
@@ -74,6 +78,8 @@ class MyView : View(){
         )
         val selectedFile: File? = fileChooser.showOpenDialog(currentWindow)
         if (selectedFile != null) {
+            lblInfo.text = ""
+            textAreaEdit.text = ""
             textAreaEdit.text = selectedFile.inputStream().readBytes().toString(Charsets.UTF_8)
             path = selectedFile.toString()
         }
